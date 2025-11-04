@@ -1,0 +1,24 @@
+[project]
+name = "knowledgeunify"
+version = "0.1.0"
+description = "knowledgeunify using crewAI"
+authors = [{ name = "Lucca de Sena Barbosa", email = "luccasena22@gmail.com" }]
+requires-python = ">=3.10,<3.14"
+dependencies = [
+    "crewai[tools]==1.3.0"
+]
+
+[project.scripts]
+knowledgeunify = "knowledgeunify.main:run"
+run_crew = "knowledgeunify.main:run"
+train = "knowledgeunify.main:train"
+replay = "knowledgeunify.main:replay"
+test = "knowledgeunify.main:test"
+run_with_trigger = "knowledgeunify.main:run_with_trigger"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "crew"
