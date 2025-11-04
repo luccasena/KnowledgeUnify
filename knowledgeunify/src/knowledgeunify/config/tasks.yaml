@@ -1,0 +1,35 @@
+tarefa_rag:
+  description: >
+    Analise o seguinte prompt enviado pelo usuário:\n\n
+    {prompt} \n\n
+    Com base nesse texto, siga o passo a passo para utilizar a ferramenta de RAG:\n
+    - Os principais pontos abordados no prompt.\n
+    - Gere palavras-chave relevantes para buscar no banco de dados vetorial.\n
+    - Utilize a ferramenta FAISSRAGTool para buscar as informações necessárias.\n
+    - Com base nas informações recuperadas, retorne uma resposta estruturada e contextualizada ao agente suporte.\n
+
+  expected_output: >
+    Um relatório detalhado contendo:\n
+    - A pergunta original do usuário.\n
+    - A busca realizada no banco vetorial.\n
+
+  agent: agente_rag
+  
+  tool: FAISSRAGTool
+
+tarefa_consutor:
+
+  description: >
+    Baseado nas informações fornecidas pelo Agente RAG, elabore uma resposta clara e objetiva para o usuário final.\n\n
+    O usuário fez a seguinte pergunta:\n\n
+    {prompt} \n\n
+    Com base nas informações fornecidas pelo Agente RAG, siga os passos abaixo:\n
+    - Analise as informações fornecidas pelo Agente RAG.\n
+    - Estruture a resposta de forma clara e objetiva.\n
+    - Garanta uma resposta profissional, empática e focada no que o usuário precisa.\n
+    - Forneça a resposta final ao usuário, garantindo que seja compreensível e útil.\n
+
+  expected_output: >
+    Uma resposta estruturada, gerada com base na descrição acima, que inclua a resposta elaborada para o usuário final.\n
+    
+  agent: agente_suporte
